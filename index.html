@@ -1,167 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Butter Bureau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: "Nyght Serif";
+    src: url("./uploads/NyghtSerif-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; width: 100%; }
+  * { box-sizing: border-box; }
+  @media (pointer: fine) {
+    .om-stage { cursor: none; }
+  }
+  .headline {
+    font-family: "Nyght Serif", serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: clamp(48px, 12vw, 220px);
+    white-space: nowrap;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+  }
+  .headline.line1 { line-height: 0.98; }
+  .headline.line2 { line-height: 0.65; letter-spacing: -0.01em; }
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Oswald:wght@600;700&amp;display=swap" rel="stylesheet">
-  <style>
-    @font-face { font-family: 'Nyght Serif'; src: url('uploads/NyghtSerif-Light.otf') format('opentype'); font-weight: 300; }
-    html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; width: 100%; }
-    * { box-sizing: border-box; }
-    @media (pointer: fine) {
-      .om-stage { cursor: none; }
-    }
-  </style>
-</helmet>
-<div class="om-stage" style="position:relative; width:100vw; height:100vh; background:{{ bgColor }}; overflow:hidden; font-family:'Oswald',sans-serif;">
+<div class="om-stage" style="position:relative; width:100vw; height:100vh; background:#000E74; overflow:hidden; font-family:'Oswald',sans-serif;">
 
-  
-
-  <div ref="{{ toastRef }}" style="position:absolute; left:9vw; bottom:8vh; width:{{ toastSize }}; aspect-ratio:1/1; will-change:transform; z-index:15; visibility:visible;">
-    <img src="uploads/BackgroundEraser_20250605_092922575.png" alt="Toast with heart-shaped butter" style="width:100%; height:100%; object-fit:contain; display:block;">
+  <div id="toast" style="position:absolute; left:9vw; bottom:8vh; width:19vw; aspect-ratio:1/1; will-change:transform; z-index:15;">
+    <img src="./uploads/BackgroundEraser_20250605_092922575.png" alt="Toast with heart-shaped butter" style="width:100%; height:100%; object-fit:contain; display:block;">
   </div>
 
   <div style="position:absolute; bottom:-3vh; left:0; right:0; display:flex; justify-content:center;">
-    <img src="uploads/butter white.png" alt="Butterr Bureau logo" style="height:clamp(20px,3vh,40px); width:auto; object-fit:contain;">
+    <img src="./uploads/butter white.png" alt="Butterr Bureau logo" style="height:clamp(20px,3vh,40px); width:auto; object-fit:contain;">
   </div>
 
-  <div ref="{{ knifeRef }}" style="position:fixed; top:0; left:0; width:{{ knifeSize }}; aspect-ratio:172/1230; pointer-events:none; will-change:transform; z-index:20;">
-    
-  <img src="uploads/knife-cursor.png" alt="Knife" style="width:100%; height:100%; object-fit:contain; display:block; filter:drop-shadow(0 6px 14px rgba(0,0,0,0.35));"></div>
+  <div id="knife" style="position:fixed; top:0; left:0; width:2.5vw; aspect-ratio:172/1230; pointer-events:none; will-change:transform; z-index:20;">
+    <img src="./uploads/knife-cursor.png" alt="Knife" style="width:100%; height:100%; object-fit:contain; display:block; filter:drop-shadow(0 6px 14px rgba(0,0,0,0.35));">
+  </div>
 
-<a href="https://app.notion.com/p/BUTTER-3a88c452a53e8013b923cd25ebd0118b?source=copy_link" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;"><div style="font-family: 'Nyght Serif',serif; font-weight: 100; color: #fff; font-size: 300px; line-height: 0.98; letter-spacing: 0,1; white-space: nowrap; text-align: center; text-decoration-line: underline; text-decoration-thickness: 2px">ЗАБИРАЙ СВІЙ</div><div style="font-family: 'Nyght Serif',serif; font-weight: 300; color: #fff; font-size: 300px; line-height: 0.65; letter-spacing: -0.01em; white-space: nowrap; text-align: center; text-decoration-line: underline; text-decoration-thickness: 2px">РУБИКАТОР</div></a></div>
+  <a href="https://app.notion.com/p/BUTTER-3a88c452a53e8013b923cd25ebd0118b?source=copy_link" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;">
+    <div class="headline line1">ЗАБИРАЙ СВІЙ</div>
+    <div class="headline line2">РУБИКАТОР</div>
+  </a>
+</div>
 
-</x-dc>
-<template id="__bundler_thumbnail" data-bg-color="#000E74">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#000E74"/>
-    <circle cx="360" cy="560" r="180" fill="#e8c477"/>
-    <rect x="700" y="120" width="60" height="420" rx="20" fill="#e6e6e6"/>
-  </svg>
-</template>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1600,&quot;height&quot;:900},&quot;bgColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#000E74&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#000E74&quot;,&quot;#12123f&quot;,&quot;#1b1450&quot;,&quot;#101038&quot;]},&quot;knifeEase&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.17,&quot;min&quot;:0.03,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Knife feel&quot;},&quot;toastSizeVw&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:19,&quot;min&quot;:10,&quot;max&quot;:26,&quot;step&quot;:1,&quot;unit&quot;:&quot;vw&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sizing&quot;},&quot;knifeSizeVw&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2.5,&quot;min&quot;:2,&quot;max&quot;:10,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;vw&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sizing&quot;},&quot;fleeRadius&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:320,&quot;min&quot;:100,&quot;max&quot;:900,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bread flee&quot;},&quot;fleeDistance&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:530,&quot;min&quot;:50,&quot;max&quot;:800,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bread flee&quot;},&quot;minGap&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:130,&quot;min&quot;:40,&quot;max&quot;:300,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bread flee&quot;}}">
-class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.knifeRef = React.createRef();
-    this.toastRef = React.createRef();
-    this.pointer = { x: 0, y: 0 };
-    this.pos = { x: 0, y: 0 };
-    this.rotation = 0;
-    this.toastHome = null;
-    this.toastPos = null;
-    this.toastVel = { x: 0, y: 0 };
-    this.toastSizePx = { w: 0, h: 0 };
-    this.onMove = this.onMove.bind(this);
-    this.onTouch = this.onTouch.bind(this);
-    this.tick = this.tick.bind(this);
+<script>
+(function () {
+  var knife = document.getElementById('knife');
+  var toast = document.getElementById('toast');
+  var pointer = { x: window.innerWidth * 0.62, y: window.innerHeight * 0.7 };
+  var pos = { x: pointer.x, y: pointer.y };
+  var toastHome = null, toastPos = null;
+  var toastVel = { x: 0, y: 0 };
+  var toastSize = { w: 0, h: 0 };
+
+  var knifeEase = 0.17;
+  var fleeRadius = 320;
+  var fleeSpeed = 530;
+  var minGap = 130;
+
+  function onMove(e) { pointer.x = e.clientX; pointer.y = e.clientY; }
+  function onTouch(e) {
+    var t = e.touches[0];
+    if (t) { pointer.x = t.clientX; pointer.y = t.clientY; }
   }
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('touchmove', onTouch, { passive: true });
 
-  componentDidMount() {
-    const startX = window.innerWidth * 0.62;
-    const startY = window.innerHeight * 0.7;
-    this.pointer = { x: startX, y: startY };
-    this.pos = { x: startX, y: startY };
-    window.addEventListener('pointermove', this.onMove);
-    window.addEventListener('touchmove', this.onTouch, { passive: true });
-    if (this.toastRef.current) {
-      const r = this.toastRef.current.getBoundingClientRect();
-      this.toastHome = { x: r.left + r.width / 2, y: r.top + r.height / 2 };
-      this.toastPos = { x: this.toastHome.x, y: this.toastHome.y };
-      this.toastSizePx = { w: r.width, h: r.height };
-    }
-    this.raf = requestAnimationFrame(this.tick);
+  function initToast() {
+    var r = toast.getBoundingClientRect();
+    toastHome = { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    toastPos = { x: toastHome.x, y: toastHome.y };
+    toastSize = { w: r.width, h: r.height };
   }
+  initToast();
+  window.addEventListener('resize', initToast);
 
-  componentWillUnmount() {
-    cancelAnimationFrame(this.raf);
-    window.removeEventListener('pointermove', this.onMove);
-    window.removeEventListener('touchmove', this.onTouch);
-  }
+  function tick() {
+    var dx = pointer.x - pos.x;
+    var dy = pointer.y - pos.y;
+    pos.x += dx * knifeEase;
+    pos.y += dy * knifeEase;
+    knife.style.transform = 'translate(' + pos.x + 'px, ' + pos.y + 'px) translate(-46%, -68%)';
 
-  onMove(e) {
-    this.pointer.x = e.clientX;
-    this.pointer.y = e.clientY;
-  }
+    if (toastHome && toastPos) {
+      var dx2 = toastPos.x - pos.x;
+      var dy2 = toastPos.y - pos.y;
+      var dist = Math.hypot(dx2, dy2) || 1;
 
-  onTouch(e) {
-    const t = e.touches[0];
-    if (t) { this.pointer.x = t.clientX; this.pointer.y = t.clientY; }
-  }
-
-  tick() {
-    const el = this.knifeRef.current;
-    if (el) {
-      const ease = this.props.knifeEase ?? 0.09;
-      const dx = this.pointer.x - this.pos.x;
-      const dy = this.pointer.y - this.pos.y;
-      const vx = dx * ease;
-      const vy = dy * ease;
-      this.pos.x += vx;
-      this.pos.y += vy;
-
-      el.style.transform = `translate(${this.pos.x}px, ${this.pos.y}px) translate(-46%, -68%)`;
-    }
-
-    const toastEl = this.toastRef.current;
-    if (toastEl && this.toastHome && this.toastPos) {
-      const dx2 = this.toastPos.x - this.pos.x;
-      const dy2 = this.toastPos.y - this.pos.y;
-      const dist = Math.hypot(dx2, dy2) || 1;
-      const threshold = this.props.fleeRadius ?? 320;
-      const fleeSpeed = this.props.fleeDistance ?? 550;
-      if (dist < threshold) {
-        const push = Math.pow((threshold - dist) / threshold, 0.4);
-        this.toastVel.x += (dx2 / dist) * push * fleeSpeed * 0.06;
-        this.toastVel.y += (dy2 / dist) * push * fleeSpeed * 0.06;
+      if (dist < fleeRadius) {
+        var push = Math.pow((fleeRadius - dist) / fleeRadius, 0.4);
+        toastVel.x += (dx2 / dist) * push * fleeSpeed * 0.06;
+        toastVel.y += (dy2 / dist) * push * fleeSpeed * 0.06;
       }
-      const minGap = this.props.minGap ?? 90;
       if (dist < minGap) {
-        const overlap = minGap - dist;
-        this.toastVel.x += (dx2 / dist) * overlap * 0.04;
-        this.toastVel.y += (dy2 / dist) * overlap * 0.04;
-        this.pos.x -= (dx2 / dist) * overlap * 0.5;
-        this.pos.y -= (dy2 / dist) * overlap * 0.5;
+        var overlap = minGap - dist;
+        toastVel.x += (dx2 / dist) * overlap * 0.04;
+        toastVel.y += (dy2 / dist) * overlap * 0.04;
+        pos.x -= (dx2 / dist) * overlap * 0.5;
+        pos.y -= (dy2 / dist) * overlap * 0.5;
       }
-      this.toastVel.x *= 0.85;
-      this.toastVel.y *= 0.85;
-      this.toastPos.x += this.toastVel.x;
-      this.toastPos.y += this.toastVel.y;
+      toastVel.x *= 0.85;
+      toastVel.y *= 0.85;
+      toastPos.x += toastVel.x;
+      toastPos.y += toastVel.y;
 
-      const marginX = Math.max(this.toastSizePx.w * 0.5 + 20, window.innerWidth * 0.05);
-      const marginY = Math.max(this.toastSizePx.h * 0.5 + 20, window.innerHeight * 0.05);
-      const minX = marginX, maxX = window.innerWidth - marginX;
-      const minY = marginY, maxY = window.innerHeight - marginY;
-      if (this.toastPos.x < minX) { this.toastPos.x = minX; this.toastVel.x = Math.abs(this.toastVel.x) * 0.6; }
-      if (this.toastPos.x > maxX) { this.toastPos.x = maxX; this.toastVel.x = -Math.abs(this.toastVel.x) * 0.6; }
-      if (this.toastPos.y < minY) { this.toastPos.y = minY; this.toastVel.y = Math.abs(this.toastVel.y) * 0.6; }
-      if (this.toastPos.y > maxY) { this.toastPos.y = maxY; this.toastVel.y = -Math.abs(this.toastVel.y) * 0.6; }
+      var marginX = Math.max(toastSize.w * 0.5 + 20, window.innerWidth * 0.05);
+      var marginY = Math.max(toastSize.h * 0.5 + 20, window.innerHeight * 0.05);
+      var minX = marginX, maxX = window.innerWidth - marginX;
+      var minY = marginY, maxY = window.innerHeight - marginY;
+      if (toastPos.x < minX) { toastPos.x = minX; toastVel.x = Math.abs(toastVel.x) * 0.6; }
+      if (toastPos.x > maxX) { toastPos.x = maxX; toastVel.x = -Math.abs(toastVel.x) * 0.6; }
+      if (toastPos.y < minY) { toastPos.y = minY; toastVel.y = Math.abs(toastVel.y) * 0.6; }
+      if (toastPos.y > maxY) { toastPos.y = maxY; toastVel.y = -Math.abs(toastVel.y) * 0.6; }
 
-      const offX = this.toastPos.x - this.toastHome.x;
-      const offY = this.toastPos.y - this.toastHome.y;
-      const tilt = Math.max(-12, Math.min(12, this.toastVel.x * 1.5));
-      toastEl.style.transform = `translate(${offX.toFixed(2)}px, ${offY.toFixed(2)}px) rotate(${tilt.toFixed(2)}deg)`;
+      var offX = toastPos.x - toastHome.x;
+      var offY = toastPos.y - toastHome.y;
+      var tilt = Math.max(-12, Math.min(12, toastVel.x * 1.5));
+      toast.style.transform = 'translate(' + offX.toFixed(2) + 'px, ' + offY.toFixed(2) + 'px) rotate(' + tilt.toFixed(2) + 'deg)';
     }
 
-    this.raf = requestAnimationFrame(this.tick);
+    requestAnimationFrame(tick);
   }
-
-  renderVals() {
-    return {
-      knifeRef: this.knifeRef,
-      toastRef: this.toastRef,
-      bgColor: this.props.bgColor ?? '#171a66',
-      toastSize: (this.props.toastSizeVw ?? 17) + 'vw',
-      knifeSize: (this.props.knifeSizeVw ?? 3) + 'vw'
-    };
-  }
-}
+  requestAnimationFrame(tick);
+})();
 </script>
 </body>
 </html>
